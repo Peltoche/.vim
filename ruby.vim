@@ -6,6 +6,3 @@ augroup FileType go
 augroup END
 "
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-
-" doubt it's necessary
-" let g:ruby_path = system('echo $HOME/.rbenv/shims')

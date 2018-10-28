@@ -45,6 +45,7 @@ nmap <Leader>- :NERDTreeToggle<CR>
 " Better UI
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
 " Don't ask to delete a buffer once deleted in NERDTree
 let NERDTreeAutoDeleteBuffer = 1
 
@@ -106,6 +107,3 @@ inoremap <C-l> <C-x><C-l>
 
 " Stop concealing characters when going into navigation and edition mode
 set concealcursor=nc
-
-" Set color scheme
-colorscheme badwolf

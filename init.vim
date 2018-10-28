@@ -1,5 +1,8 @@
 set nocompatible
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType sh setlocal ts=4 sts=4 sw=4 expandtab
+
 " ----------------------------------------------------------------------------
 " Load plugins
 " ----------------------------------------------------------------------------
@@ -16,12 +19,16 @@ inoremap ghh <Esc>
 nnoremap ghh <Esc>
 vnoremap ghh <Esc>
 
+set noswapfile
+
+set showmatch
+
 set number
 set ruler
 set encoding=utf-8
 set hidden
 set mouse=a
-set colorcolumn=120
+set colorcolumn=80
 
 " Color the cursor line
 set cursorline
@@ -121,6 +128,8 @@ augroup END
 " Removes trailing spaces Leader
 " ----------------------------------------------------------------------------
 
+au FileType javascript set tabstop=2 textwidth=79
+au FileType javascript.jsx set tabstop=2 textwidth=79
 function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
@@ -141,12 +150,12 @@ source ~/.config/nvim/go.vim
 source ~/.config/nvim/git.vim
 source ~/.config/nvim/json.vim
 source ~/.config/nvim/ui.vim
-source ~/.config/nvim/task.vim
 source ~/.config/nvim/navigation.vim
 source ~/.config/nvim/autocomplete.vim
 
 " Life saver: display invisible chars
 command ShowUtf8 /[^[:print:]]
+
 
 command Cheat :term! less +31 ~/.config/nvim/README.md
 " Store your personal settings there (colors, etc)

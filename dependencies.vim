@@ -7,11 +7,10 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'tmux-plugins/vim-tmux' | Plug 'tmux-plugins/vim-tmux-focus-events'
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/neosnippet'
@@ -30,6 +29,14 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Languages
 
+"" Rust
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+
+"" Puppet
+Plug 'rodjek/vim-puppet'
+autocmd FileType puppet setlocal ts=4 sts=4 sw=4 expandtab
+
 "" Clojure
 "Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -37,15 +44,20 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 "Plug 'neovim/node-host'
 "Plug 'snoe/nvim-parinfer.js' ", { 'for': 'clojure' }
+"
+
+Plug 'elmcast/elm-vim'
 
 "" Elixir
 "Plug 'elixir-lang/vim-elixir'
 "Plug 'archSeer/elixir.nvim'
 
 "" Go
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'nsf/gocode', {'rtp': 'nvim/'}
-Plug 'fatih/vim-go'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'nsf/gocode', {'rtp': 'nvim/'}
+
 
 "" Git
 Plug 'junegunn/gv.vim'"
@@ -58,7 +70,9 @@ Plug 'junegunn/gv.vim'"
 
 "" Javascript
 "Plug 'kchmck/vim-coffee-script'
-Plug 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+"Plug 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
 "" Swift
 "Plug 'keith/swift.vim'
@@ -73,6 +87,7 @@ Plug 'vim-syntastic/syntastic'
 "" HTML && CSS
 Plug 'groenewege/vim-less'
 "Plug 'slim-template/vim-slim'
+
 
 "" Infra as code
 "Plug 'fatih/vim-hclfmt', { 'do': 'go get github.com/fatih/hclfmt' }
@@ -94,9 +109,6 @@ Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'cbracken/vim-monochrome'
-
-" Task manager (task warrior)
-Plug 'blindFS/vim-taskwarrior'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'

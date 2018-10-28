@@ -4,8 +4,9 @@ set re=1
 set lazyredraw
 
 " Disable git gutter by default
-let g:gitgutter_enabled = 0
-let g:gitgutter_realtime = 0
+let g:gitgutter_enabled = 1
+let g:gitgutter_signs = 1
+let g:gitgutter_realtime = 1
 let g:gitgutter_eager = 0
 let g:gitgutter_map_keys = 0
 
@@ -68,57 +69,24 @@ function StatusHighlight(mode, active)
     endif
 endfunction
 
+" Set color scheme
+colorscheme badwolf
 
 " Allow devicons to set airline
 let g:airline_powerline_fonts = 1
-
-"function StatusGit()
-    "let symbols = ['+', '~', '-']
-    "let hunks = GitGutterGetHunkSummary()
-    "let ret = []
-
-    "for i in [0, 1, 2]
-        "if hunks[i] > 0
-            "call add(ret, symbols[i] . hunks[i])
-        "endif
-    "endfor
-
-    "let git = join(ret, ' ') . ' ⎇ ' . fugitive#head()
-
-    "return fugitive#head() != '' && winwidth('.') > 70 ? git : ''
-"endfunction
-
-"function Status(active)
-    "let status = '%#StatusMode# %{StatusHighlight(mode(), ' .a:active .')} '
-                "\'%#StatusLeft#'
-                "\ .' %{fnamemodify(expand(''%''), '':~:.'')}%w%q%h%r%<%m '
-                "\ .'%#StatusMiddle#'
-
-    "if a:active == 1
-        "let status .= ' %{StatusGit()}'
-    "endif
-
-    "let status .= ' %#ErrorMsg#%{PairingStatus()}%*'
-
-    "if &filetype != 'netrw' && &filetype != 'undotree'
-        "let status .= '%=' .' %{&fileencoding} | %{&fileformat} '
-                    "\  .'%#StatusRight2# %{&filetype} '
-                    "\  .'%#StatusRight1# %p%% %l:%c '
-                    "\  .'%#StatusWarning%{SyntasticStatuslineFlag()}'
-    "endif
-
-
-    "return status
-"endfunction
-
-"function StatusUpdate()
-    "for n in range(1, winnr('$'))
-        "let s = winnr('$') == 1 ? [Status(1)] : [Status(1), Status(0)]
-        "call setwinvar(n, '&statusline', s[n!=winnr()])
-    "endfor
-"endfunction
-
-"augroup status-update
-  "autocmd!
-  "autocmd VimEnter,WinEnter,BufWinEnter,BufUnload * call StatusUpdate()
-"augroup END
+autocmd FileType nerdtree setlocal nolist
+hi MatchParen ctermbg=blue
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = 'ƛ'
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "\uf459",
+    \ "Staged"    : "\uf457",
+    \ "Untracked" : "\uf459",
+    \ "Renamed"   : "\uf45a",
+    \ "Unmerged"  : "2",
+    \ "Deleted"   : "\uf458",
+    \ "Dirty"     : "\uf178 ",
+    \ "Clean"     : "4",
+    \ 'Ignored'   : '\uf474',
+    \ "Unknown"   : "?"
+    \ }
+set encoding=UTF-8

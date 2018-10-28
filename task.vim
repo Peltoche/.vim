@@ -1,3 +1,0 @@
-
-
-map <Leader>+ :TW<CR>
