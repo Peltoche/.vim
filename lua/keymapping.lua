@@ -38,8 +38,9 @@ map('v', '>', '>gv', {noremap = true, silent = true})
 map('v', '<', '<gv', {noremap = true, silent = true})
 
 -- Split
-map('v', '<leader>vs', ':vsplit', {noremap = true, silent = true})
-map('v', '<leader>hs', ':split', {noremap = true, silent = true})
+map('n', '<leader>vs', ':vsplit<cr>', {noremap = true, silent = true})
+map('n', '<leader>hs', ':split<cr>', {noremap = true, silent = true})
+
 
 -- move around splits using <leader> + {h,j,k,l}
 map('n', '<leader>h', '<C-w>h', {noremap = true, silent = true})
