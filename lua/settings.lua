@@ -27,7 +27,7 @@ o.list = true -- Show some invisible characters
 
 -- UI
 o.syntax='enable'       -- Activate the syntax highlight
-w.number = true         -- Print the line number
+vim.wo.number = true         -- Print the line number
 o.showmatch = true      -- Show briefly the matching bracket if on screen
 o.cursorline = true     -- Color the cursor line
 o.sidescrolloff = 8     -- Columns of context
