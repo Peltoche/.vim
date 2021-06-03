@@ -1,6 +1,6 @@
 -----------------------------------------------------------
---  Reopen file to the last edit place
+--  Add git information into the sign column
 -----------------------------------------------------------
 
-require'nvim-lastplace'.setup{}
 
+-- require('gitsigns').setup()

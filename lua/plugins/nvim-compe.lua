@@ -2,9 +2,6 @@
 -- Autocomplete configuration file
 -----------------------------------------------------------
 
--- This file can be loaded by calling `require('module_name')` from your
--- `init.lua`
-
 require('compe').setup {
 	enabled = true,
 	autocomplete = true,

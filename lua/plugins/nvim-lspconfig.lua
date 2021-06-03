@@ -1,12 +1,9 @@
-
 -----------------------------------------------------------
 -- Neovim LSP configuration file
 -----------------------------------------------------------
 
--- This file can be loaded by calling `require('module_name')` from your
--- `init.lua`
-
 local nvim_lsp = require('lspconfig')
+local cmd = vim.cmd
 local g = vim.g
 
 -- plugin: nvim-lspconfig
@@ -126,6 +123,5 @@ end
 -----------------------------------------------------------
 -- Configure the auto run
 -----------------------------------------------------------
---autocmd BufWritePre *.go lua goimports(1000)
---autocmd BufWritePost * lua vim.lsp.buf.formatting()
---autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
+-- augroups don't have an interface yet
+cmd('au BufWritePre *.go lua goimports(1000)')
