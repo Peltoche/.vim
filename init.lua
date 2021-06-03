@@ -14,6 +14,7 @@ paq 'kyazdani42/nvim-web-devicons'      -- Icons
 paq 'hrsh7th/nvim-compe'                -- Autocomplete
 paq {'nvim-treesitter/nvim-treesitter'} -- Syntax tree
 paq 'kyazdani42/nvim-tree.lua'          -- file-explorer
+paq 'ethanholz/nvim-lastplace'          -- Reopen at your last edit position
 
 -- Langae server
 paq 'neovim/nvim-lspconfig'
@@ -29,12 +30,14 @@ paq 'shougo/deoplete-lsp'
 paq 'shougo/deoplete.nvim'
 -- g['deoplete#enable_at_startup'] = 1  -- enable deoplete at startup
 
+
 -----------------------------------------------------------
 -- Import Lua modules
 -----------------------------------------------------------
 require('settings')         -- settings
 require('keymapping')       -- keymapping
 
-require('nvim-lspconfig/main')
-require('nvim-compe/main')
-require('nvim-tree/main')
+require('plugins/nvim-lspconfig')
+require('plugins/nvim-compe')
+require('plugins/nvim-tree')
+require('plugins/nvim-lastplace')

@@ -54,7 +54,7 @@ map('n', '//', ':nohlsearch<CR>:echo \'Search highlight cleared\'<CR>', {noremap
 
 -- nvim-tree shortcuts
 map('n', '<leader>-', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
--- map('n', '<leader>r', ':NvimTreeRefresh<CR>', {noremap = true, silent = true})
+map('n', '<leader>_', ':NvimTreeRefresh<CR>', {noremap = true, silent = true})
 -- map('n', '<leader>n', ':NvimTreeFindFile<CR>', {noremap = true, silent = true})
 
 
