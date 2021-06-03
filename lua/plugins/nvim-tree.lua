@@ -7,8 +7,6 @@
 
 local g = vim.g
 
-
-
 g.nvim_tree_hide_dotfiles = 1          -- 0 by default, this option hides files and folders starting with a dot `.`
 g.nvim_tree_gitignore = 1              -- 0 by default
 g.nvim_tree_auto_open = 1              -- 0 by default, opens the tree when typing `vim $DIR` or `vim`

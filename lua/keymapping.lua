@@ -42,6 +42,10 @@ map('n', '<leader>vs', ':vsplit<cr>', {noremap = true, silent = true})
 map('n', '<leader>hs', ':split<cr>', {noremap = true, silent = true})
 
 
+
+map('n', '<leader>=', 'ggVG=', {noremap = true, silent = true})
+
+
 -- move around splits using <leader> + {h,j,k,l}
 map('n', '<leader>h', '<C-w>h', {noremap = true, silent = true})
 map('n', '<leader>j', '<C-w>j', {noremap = true, silent = true})
