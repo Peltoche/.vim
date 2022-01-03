@@ -16,6 +16,12 @@ local b = vim.b      -- buffer-scoped options
 
 
 -----------------------------------------------------------
+-- Tests
+-----------------------------------------------------------
+o.wrap = false -- Do not wrap lines
+
+
+-----------------------------------------------------------
 -- General
 -----------------------------------------------------------
 g.mapleader = ' ' -- Use <space> a leader key
@@ -50,11 +56,11 @@ o.ruler = true      -- Show the line and column number inside the status line
 -- Tab, indent
 -----------------------------------------------------------
 b.linebreak = true
-b.tabstop = 2           -- Number of spaces tabs count for
-b.shiftwidth = 2        -- Size of an indent
-b.softtabstop = 2       -- Number of space a <Tab> count during editing
-b.expandtab = true      -- Convert tabs in spaces in insert mode
-b.smartindent = true    -- autoindent new lines
+o.tabstop = 2           -- Number of spaces tabs count for
+o.shiftwidth = 2        -- Size of an indent
+o.softtabstop = 2       -- Number of space a <Tab> count during editing
+o.expandtab = true      -- Convert tabs in spaces in insert mode
+o.smartindent = true    -- autoindent new lines
 
 
 -----------------------------------------------------------

@@ -41,14 +41,11 @@ map('v', '<', '<gv', {noremap = true, silent = true})
 map('n', '<leader>vs', ':vsplit<cr>', {noremap = true, silent = true})
 map('n', '<leader>hs', ':split<cr>', {noremap = true, silent = true})
 
--- Indent the all file
--- map('n', '<leader>=', 'ggVG=', {noremap = true, silent = true})
-
 
 --Remap for dealing with word wrap
-map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap=true, expr = true, silent = true})
-map('n', 'j', "v:count == 0 ? 'gj' : 'j'", {noremap= true, expr = true, silent = true})
-
+-- map('n', 'k', 'gk', {noremap=true, expr = true, silent = true})
+-- map('n', 'j', 'gj', {noremap= true, expr = true, silent = true})
+--
 -- Move around splits using <leader> + {h,j,k,l}
 map('n', '<leader>h', '<C-w>h', {noremap = true, silent = true})
 map('n', '<leader>j', '<C-w>j', {noremap = true, silent = true})
@@ -58,18 +55,6 @@ map('n', '<leader>l', '<C-w>l', {noremap = true, silent = true})
 -- Clear search highlighting
 map('n', '//', ':nohlsearch<CR>:echo \'Search highlight cleared\'<CR>', {noremap = true, silent = true})
 
-
--- nvim-lsp shortcuts
--- buf_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-map('n', '<leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap = true, silent = true})
-map('n', '<leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap = true, silent = true})
-map("n", "<space>=", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
-
--- telescop shortcuts
-
-map('n', '<leader>F', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], { noremap = true })
-map('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<cr>]], { noremap = true })
-map('n', '<leader>gc', [[<cmd>lua require('telescope.builtin').git_commits()<cr>]], { noremap = true, silent = true})
 
 -- nvim-tree shortcuts
 map('n', '<leader>-', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
