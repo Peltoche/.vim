@@ -24,12 +24,13 @@ o.wrap = false -- Do not wrap lines
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
-g.mapleader = ' ' -- Use <space> a leader key
 o.mouse='a' -- Enable the mouse support
 o.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 b.swapfile = false -- Do not allow the creation of file ~.swap~
 o.whichwrap='h,l'   -- Make h and l wrap around the start and the end of lines
 o.list = true -- Show some invisible characters
+
+vim.opt.undofile = true --Save undo history
 
 -- UI
 o.syntax='enable'       -- Activate the syntax highlight
@@ -82,5 +83,15 @@ cmd([[colorscheme badwolf]])    -- set colorscheme
 -----------------------------------------------------------
 -- Autocompletion
 -----------------------------------------------------------
-o.completeopt = 'menuone,noselect,noinsert' -- completion options
---o.shortmess = 'c'       -- don't show completion messages
+o.completeopt = 'menuone,noselect' -- completion options
+
+
+---- Highlight on yank
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})

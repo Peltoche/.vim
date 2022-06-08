@@ -14,6 +14,7 @@ require "paq" {
   'sjl/badwolf';                       -- Theme
   'kyazdani42/nvim-web-devicons';      -- Icons
   'nvim-treesitter/nvim-treesitter';   -- Syntax tree
+  'nvim-treesitter/nvim-treesitter-textobjects'; -- Additional textobjects for treesitter
   'kyazdani42/nvim-tree.lua';          -- file-explorer
   'ethanholz/nvim-lastplace';          -- Reopen at your last edit position
   'lewis6991/gitsigns.nvim';           -- Show the git modification into the sign bar
@@ -22,9 +23,6 @@ require "paq" {
   'windwp/nvim-autopairs';             -- Autopairs
   'rodjek/vim-puppet';                 -- For Puppet syntax highlighting
 
-  'neovim/nvim-lspconfig'; -- Langage server
-
-
   -- File explorer with telescope
   'nvim-lua/popup.nvim';
   'nvim-lua/plenary.nvim';
@@ -32,10 +30,16 @@ require "paq" {
 
   -- Autocomplete
   'neovim/nvim-lspconfig'; -- Collection of configurations for built-in LSP client
-  'hrsh7th/nvim-cmp'; -- Autocompletion plugin
   'hrsh7th/cmp-nvim-lsp'; -- LSP source for nvim-cmp
   'saadparwaiz1/cmp_luasnip'; -- Snippets source for nvim-cmp
-  'L3MON4D3/LuaSnip'; -- Snippets plugin
+  'L3MON4D3/LuaSnip'; -- Snippets plugin  
+  'hrsh7th/nvim-cmp';
+
+
+  --[[ 'hrsh7th/cmp-buffer';
+  'hrsh7th/cmp-path';
+  'hrsh7th/cmp-cmdline'; ]]
+  -- 'hrsh7th/nvim-cmp';
 
   'f-person/git-blame.nvim';
 

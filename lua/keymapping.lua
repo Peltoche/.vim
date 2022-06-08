@@ -7,14 +7,24 @@
 
 local map = vim.api.nvim_set_keymap
 
+-- Remap space as leader key
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+
+--Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 -- Press kk to exit
 map('i', 'kk', '<Esc>', {noremap = true})
 
 -- Autocomplete with Tab
-map('i', '<Tab>', 'v:lua.tab_complete()', {expr = true})
-map('s', '<Tab>', 'v:lua.tab_complete()', {expr = true})
-map('i', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})
-map('s', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})
+--[[ map('i', '<Tab>', 'v:lua.tab_complete()', {expr = true})
+map('s', '<Tab>', 'v:lua.tab_complete()', {expr = true}) ]]
+--[[ map('i', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})
+map('s', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})  ]]
 
 -- Don't use arrow keys
 map('', '<up>', '<nop>', {noremap = true})
