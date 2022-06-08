@@ -10,7 +10,7 @@ local g = vim.g
 --- For language server setup see: https://github.com/neovim/nvim-lspconfig
 
 require'lspconfig'.eslint.setup{}
-
+require'lspconfig'.jsonls.setup{}
 
 -- Go -> gopls
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#gopls
@@ -48,15 +48,6 @@ nvim_lsp.html.setup {
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-
-	-- Add the auto-formating on save
--- if client.resolved_capabilities.document_formatting then
--- 	vim.api.nvim_command [[augroup Format]]
--- 	vim.api.nvim_command [[autocmd! * <buffer>]]
--- 	vim.api.nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()]]
--- 	vim.api.nvim_command [[augroup END]]
--- end
 
 
 	-- Enable completion triggered by <c-x><c-o>
@@ -133,6 +124,12 @@ function goimports(timeout_ms)
 		vim.lsp.buf.execute_command(action)
 	end
 end
+
+
+
+-- let g:lsp_format_sync_timeout = 1000
+--[[ autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+autocmd! BufWritePre *.rs,*.go call execute('goimports(1000)') ]]
 
 -----------------------------------------------------------
 -- Configure the auto run

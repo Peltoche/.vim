@@ -7,21 +7,24 @@
 
 local g = vim.g
 
-g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
+-- g.nvim_tree_= 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
 
 require('nvim-tree').setup{
       disable_netrw       = true,
       hijack_netrw        = true,
       open_on_setup       = true,
+      open_on_tab = true,
       ignore_ft_on_setup  = {},
       update_to_buf_dir   = {
         enable = true,
         auto_open = true,
       },
-      git = {
-	ignore = 1,
+      renderer = {
+        highlight_opened_files = "true",
       },
-      auto_close          = true,
+      git = { 
+        ignore = true,
+      },
       open_on_tab         = false,
       hijack_cursor       = false,
       update_cwd          = false,
@@ -52,3 +55,12 @@ require('nvim-tree').setup{
         }
       }
 }
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+      vim.cmd "quit"
+    end
+  end
+})
