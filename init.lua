@@ -2,49 +2,51 @@
 -----------------------------------------------------------
 -- Plugins
 -----------------------------------------------------------
--- paq-nvim
--- vim.cmd 'packadd paq-nvim'      -- load package
--- local paq = require('paq-nvim').paq   -- import module with `paq` function
--- paq{'savq/paq-nvim', opt=true}  -- let paq manage itself
 
-require "paq" {
-  "savq/paq-nvim";                  -- Let Paq manage itself
+vim.cmd [[packadd packer.nvim]]
 
-  -- add packages
-  'sjl/badwolf';                       -- Theme
-  'kyazdani42/nvim-web-devicons';      -- Icons
-  'nvim-treesitter/nvim-treesitter';   -- Syntax tree
-  'nvim-treesitter/nvim-treesitter-textobjects'; -- Additional textobjects for treesitter
-  'kyazdani42/nvim-tree.lua';          -- file-explorer
-  'ethanholz/nvim-lastplace';          -- Reopen at your last edit position
-  'lewis6991/gitsigns.nvim';           -- Show the git modification into the sign bar
-  'nvim-lua/lsp-status.nvim';          -- Show LSP informations inside the statusline
-  'b3nj5m1n/kommentary';               -- Comments
-  'windwp/nvim-autopairs';             -- Autopairs
-  'rodjek/vim-puppet';                 -- For Puppet syntax highlighting
+require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+
+  -- Style
+  use 'sjl/badwolf'                       -- Theme
+  use 'kyazdani42/nvim-web-devicons'      -- Icons
+  use 'rodjek/vim-puppet'                 -- For Puppet syntax highlighting
+
+  -- Utilities
+  use 'ethanholz/nvim-lastplace'          -- Reopen at your last edit position
+  use 'lewis6991/gitsigns.nvim'           -- Show the git modification into the sign bar
+  use 'nvim-lua/lsp-status.nvim'          -- Show LSP informations inside the statusline
+  use 'b3nj5m1n/kommentary'               -- Comments
+  use 'windwp/nvim-autopairs'             -- Autopairs
+
+  -- Syntax tree
+  use 'nvim-treesitter/nvim-treesitter'   -- Syntax tree
+  use 'nvim-treesitter/nvim-treesitter-textobjects' -- Additional textobjects for treesitter
+
+  -- File explorer
+  use 'kyazdani42/nvim-tree.lua'          -- file-explorer
+
 
   -- File explorer with telescope
-  'nvim-lua/popup.nvim';
-  'nvim-lua/plenary.nvim';
-  'nvim-telescope/telescope.nvim';
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
 
   -- Autocomplete
-  'neovim/nvim-lspconfig'; -- Collection of configurations for built-in LSP client
-  'hrsh7th/cmp-nvim-lsp'; -- LSP source for nvim-cmp
-  'saadparwaiz1/cmp_luasnip'; -- Snippets source for nvim-cmp
-  'L3MON4D3/LuaSnip'; -- Snippets plugin  
-  'hrsh7th/nvim-cmp';
+  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  use 'L3MON4D3/LuaSnip' -- Snippets plugin  
 
+  use 'kosayoda/nvim-lightbulb'
+  use 'antoinemadec/FixCursorHold.nvim'
 
-  --[[ 'hrsh7th/cmp-buffer';
-  'hrsh7th/cmp-path';
-  'hrsh7th/cmp-cmdline'; ]]
-  -- 'hrsh7th/nvim-cmp';
-
-  'f-person/git-blame.nvim';
-
-}
-
+  use 'f-person/git-blame.nvim'
+end)
 
 -----------------------------------------------------------
 -- Import Lua modules

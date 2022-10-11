@@ -15,10 +15,7 @@ require('nvim-tree').setup{
       open_on_setup       = true,
       open_on_tab = true,
       ignore_ft_on_setup  = {},
-      update_to_buf_dir   = {
-        enable = true,
-        auto_open = true,
-      },
+      -- sync_root_with_cwd = true,
       renderer = {
         highlight_opened_files = "true",
       },
@@ -48,7 +45,6 @@ require('nvim-tree').setup{
         width = 30,
         height = 30,
         side = 'left',
-        auto_resize = true,
         mappings = {
           custom_only = false,
           list = {}

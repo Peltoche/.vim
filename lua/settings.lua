@@ -29,8 +29,12 @@ o.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 b.swapfile = false -- Do not allow the creation of file ~.swap~
 o.whichwrap='h,l'   -- Make h and l wrap around the start and the end of lines
 o.list = true -- Show some invisible characters
+b.noswapfile = true
+g.noswapfile = true
 
-vim.opt.undofile = true --Save undo history
+o.undofile = true --Save undo history
+o.shortmess = 'a' 
+g.noswapfile = true
 
 -- UI
 o.syntax='enable'       -- Activate the syntax highlight
